@@ -1,0 +1,135 @@
+<ng-container *ngIf="isLoader">
+    <div class="loader-wrapper">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</ng-container>
+<div class="welcome-page-wrapper" *ngIf="showStudents">
+    <div class="card card-test" style="height: 65vh; overflow: auto;">
+        <div class="card-body">
+            <h4>Welcome to ByTrait!</h4>
+            <p>We are thrilled to have you on board as a TPO. Explore the power of personalised guidance by accessing your student’s
+                detailed reports for insightful training and placement service.</p><div class="form-floating input-group mb-4" style="width: 50%;">
+                <input type="text" class="form-control" [(ngModel)]="studentName">
+                <label for="floatingInputInvalid">Student Name</label>
+                <button type="button" (click)="searchStudent()" class="btn btn-primary mr-2">Search</button>
+            </div>
+            <div *ngIf="studentList.length!=0">
+                <ng-container *ngFor="let student of studentList">
+                    <div class="student-table">
+                        <div class="col-sm-3 justify-content-center">{{student.studentName}}</div>
+                        <div class="col-sm-3 justify-content-center">{{student.email}}</div>
+                        <div class="col-sm-2 justify-content-center">{{student.mobile}}</div>
+                        <div class="col-sm-2 justify-content-center">{{student.branch}}</div>
+                        <div class="col-sm-2 justify-content-center" *ngIf="student.isReportAvailable=='Yes'">
+                            <button type="button" (click)="viewReport(student.studentId, student.studentName)"
+                                class="btn btn-primary mr-2">View Report</button>
+                        </div>
+                        <div class="col-sm-2 justify-content-center" *ngIf="student.isReportAvailable=='No'"
+                            title="Report not generated">
+                            <button type="button" disabled class="btn btn-primary mr-2">View Report</button>
+                        </div>
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-container *ngIf="showChat">
+
+    <div class="card card-test" style="height: 65vh; background: #f1f1f1; overflow: auto;">
+        <div class="card-body">
+            <div class="chat-top">
+                <div style="float: right; font-weight: bold;">
+                    <button type="button" class="btn btn-primary mr-2" (click)="showStudentList()">
+                        < Back to students</button>
+                </div>
+                <div style="float: right; margin-right: 25px;">
+                    <button type="button" class="btn btn-primary mr-2" (click)="openReport()">
+                        < Back to Report</button>
+                </div>
+                <div class="student-name">
+                    <b>Student Name: </b> {{selectedStudentName}}
+                </div>
+            </div>
+            <div class="chat-div">
+                <div class="left-chat-div">Maximum three questions can be asked.
+                    <br><b *ngIf="chatData.question3">You have exhausted the limit of three questions</b>
+                </div>
+                <div class="right-chat-div">
+                    <div [ngClass]="chatData.question3?'answer-div2':'answer-div1'">
+                        <div *ngIf="chatData.question1">
+                            <b>Question1</b> : {{chatData.question1}}
+                            <br>
+                            <b>Answer1</b> : {{chatData.answer1}}
+                        </div>
+                        <br>
+                        <div *ngIf="chatData.question2">
+                            <b>Question2</b> : {{chatData.question2}}
+                            <br>
+                            <b>Answer2</b> : {{chatData.answer2}}
+                        </div>
+                        <br>
+                        <div *ngIf="chatData.question3">
+                            <b>Question3</b> : {{chatData.question3}}
+                            <br>
+                            <b>Qnswer3</b> : {{chatData.answer3}}
+                        </div>
+                    </div>
+                    <div style="position: relative; bottom: -90%; padding-top: 5px;" *ngIf="showChatText">
+                        <input type="text" style="    width: 90%;
+                        display: inline;
+                        margin-right: 10px;
+                        margin-left: 10px;" class="form-control" [(ngModel)]="question" placeholder="Ask from ByTrait">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0d6efd" class="bi bi-send"
+                            viewBox="0 0 16 16" style="cursor: pointer;" (click)="sendQuestion()">
+                            <path
+                                d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z" />
+                        </svg>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</ng-container>
+
+<ng-container *ngIf="showReport">
+    <div class="student-selected">
+        <div style="float: right; font-weight: bold;">
+            <button type="button" class="btn btn-primary mr-2" (click)="showStudentList()">
+                < Back to students</button>
+        </div>
+        <div style="float: right; margin-right: 25px; display: none;">
+            <button type="button" class="btn btn-primary mr-2" (click)="openChat()">Ask a question</button>
+        </div>
+        <div class="student-name">
+            <b>Student Name: </b> {{selectedStudentName}}
+        </div>
+    </div>
+    <div style="background-color: #f1f1f1;">
+        <div class="container">
+            <app-top3-personality-strengths></app-top3-personality-strengths>
+        </div>
+    </div>
+    <div style="background-color:#ffffff;">
+        <div class="container">
+            <app-career-interests></app-career-interests>
+        </div>
+    </div>
+    <div style="background-color:#f1f1f1;">
+        <div class="container">
+            <app-career-options></app-career-options>
+        </div>
+    </div>
+    <div style="background-color:#ffffff;" id="careerModelPath">
+        <div class="container mt-4">
+            <app-careerpath-modal></app-careerpath-modal>
+        </div>
+    </div>
+</ng-container>

@@ -1,0 +1,17 @@
+<ng-container>
+    <h3> Enter OTP to verify and login</h3>
+    <form [formGroup]="loginForm" class="login-form form-floating">
+        <div class="form-floating mb-2">
+            <input type="email" class="form-control" id="floatingInputInvalid" formControlName="otp" placeholder="name@example.com">
+            <label for="floatingInputInvalid">Enter OTP</label>
+        </div>
+        <div class="d-flex justify-content-between">
+            <p class="text-warning me-2">Please check your email for the OTP sent to your email address</p>
+            <button type="button"  style="line-height: 2px;
+            height: 25px;"  class="btn btn-outline-primary btn-sm">Resend</button>
+        </div>
+        <div class="d-flex login-btn-wrapper">
+            <button type="button" (click)="submit()" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</ng-container>

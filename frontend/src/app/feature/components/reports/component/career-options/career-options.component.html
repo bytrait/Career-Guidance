@@ -1,0 +1,144 @@
+<section id="careerOptions" class=" pt-4 pb-4">
+    <div class="mb-4 d-flex flex-column  justify-content-center align-content-center">
+        <h2 class="text-center">Career Options</h2>
+        <p class="text-center">These career options suit you the best based on your personality strengths, career
+            interest and the chosen career field as <b>{{qualification}}</b>. Click on
+            the option to see the detailed career path for it.</p>
+    </div>
+
+    <div class="row d-flex justify-content-between align-content-center" *ngIf="newCareerList.length > 0">
+        <div class="col-sm-12  align-self-center">
+            <div class="career-option-cards">
+                <div class="career-option-cards-body d-flex">
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[0]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[0]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[0]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[0]?.careerTitle, newCareerList[0]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[0]?.careerTitle}}</h3>
+                            <p>{{newCareerList[0]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[0]?.careerTitle, newCareerList[0]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[1]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[1]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[1]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[1]?.careerTitle, newCareerList[1]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[1]?.careerTitle}}</h3>
+                            <p>{{newCareerList[1]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[1]?.careerTitle, newCareerList[1]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[2]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[2]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[2]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[2]?.careerTitle, newCareerList[2]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[2]?.careerTitle}}</h3>
+                            <p>{{newCareerList[2]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[2]?.careerTitle, newCareerList[2]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="career-option-cards-body d-flex">
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[3]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[3]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[3]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[3]?.careerTitle, newCareerList[3]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[3]?.careerTitle}}</h3>
+                            <p>{{newCareerList[3]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[3]?.careerTitle, newCareerList[3]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[4]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[4]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[4]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[4]?.careerTitle, newCareerList[4]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[4]?.careerTitle}}</h3>
+                            <p>{{newCareerList[4]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[4]?.careerTitle, newCareerList[4]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+                    <div class="career-option-card-item right" [ngClass]="{'pointer': !isCounsellor}" style="position: relative;">
+                        <div *ngIf="newCareerList[5]?.careerTitle===savedPreferredCareer" class="saved-career" style="display: none;"
+                            title="This is preferred career">
+                            <div class="checkmark"></div>
+                        </div>
+                        <div *ngIf="newCareerList[5]?.careerTitle!==savedPreferredCareer && !savedPreferredCareer" style="display: none;"
+                            [ngClass]="{'save-career': !isCounsellor, 'disabled-career': isCounsellor}"
+                            [title]="!isCounsellor ? 'Click to save as preferred career' : ''"
+                            (click)="!isCounsellor ? openConfirmationDialog(newCareerList[5]?.careerTitle): null">
+                        </div>
+                        <div
+                            (click22)="!isCounsellor ? onClickCareerOption(newCareerList[5]?.careerTitle, newCareerList[5]?.careerDescription): null">
+                            <h3 class="career-option-title">{{newCareerList[5]?.careerTitle}}</h3>
+                            <p>{{newCareerList[5]?.careerDescription}}</p>
+                        </div>
+                        <div class="upper"></div>
+                        <div class="show-path">
+                            <button type="button" (click)="onClickCareerOption(newCareerList[5]?.careerTitle, newCareerList[5]?.careerDescription)" class="btn btn-primary me-4">Show Career Path</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!newCareerList.length" class="d-flex justify-content-center align-content-center">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> ...Loading
+    </div>
+</section>

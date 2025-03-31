@@ -1,0 +1,123 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+body {
+
+    font-family: 'Red Hat Display', sans-serif;
+    padding-right: 0px!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p {
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+
+:root {
+    --primary-color: #3573EB
+}
+
+.card-test {
+    min-height: calc(100vh - 40vh);
+    border: none;
+    box-shadow: 4px 4px 4px 0px #e5e5e5;
+
+    .card-footer {
+        border: none;
+        background-color: #fff;
+    }
+}
+
+
+
+.hero-section {
+    padding: 0px 15px;
+
+    .welcome-header {
+        span {
+            font-size: 2.3rem;
+            margin-right: 1rem;
+            color: #203B70;
+            font-weight: 700;
+            font-family: 'Red Hat Display', sans-serif;
+
+        }
+
+        span+span {
+            color: #203B70;
+        }
+    }
+}
+
+
+section {
+    h2 {
+        font-size: 2rem;
+        font-family: 'Red Hat Display', sans-serif;
+        font-weight: 700;
+        color: #353535;
+    }
+
+    p {
+        font-family: 'Red Hat Display', sans-serif;
+        font-weight: 500;
+        color: #6C6C6C;
+    }
+}
+
+.collapse-card {
+    background-color: #F5F8FB;
+    background-color: #fdfdfd;
+    padding: 8px 7px;
+    border-radius: 15px;
+
+    .btn {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-family: 'Red Hat Display', sans-serif;
+        font-weight: 700;
+        color: #353535;
+
+        i {
+            color: #3573EB;
+        }
+    }
+
+    .collapse-body {
+        padding: 15px;
+
+        ul li {
+            padding: 5px 5px;
+            font-size: 1rem;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+:root {
+    --body-background-color: #e5f4ff;
+    --v-progress-left: 50px;
+    --v-progress-item-height-width: 25px;
+    --v-progress-line-height: 31px;
+    --v-progress-line-width: 5px;
+    --v-progress-gap: 10px;
+    --blue: #0081c9;
+    --green: #3573EB;
+    --light-blue: #3573EB;
+    --mq-w-768: 768px
+}
+
+
+
+// RESPONSIVE 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

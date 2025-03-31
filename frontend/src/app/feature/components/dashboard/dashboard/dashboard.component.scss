@@ -1,0 +1,20 @@
+.page-wrapper{
+    height: 100vh;
+    background-image: linear-gradient(to top right,#f4f5f8, #f4f5f8, #f4f5f8, #a4a4fb);
+}
+
+
+@media screen and (max-width: 768px) {
+    .page-wrapper{
+        height: 100%;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1024px) and (orientation:portrait) {
+    .main-wrapper {
+        height: auto;
+    }
+  }
+ 
+

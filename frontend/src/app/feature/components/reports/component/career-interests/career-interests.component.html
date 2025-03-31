@@ -1,0 +1,37 @@
+<section id="careerIntrest" class="pt-4 pb-4">
+    <div class="mb-4 d-flex flex-column  justify-content-center align-content-center">
+        <h2>Your career interests</h2>
+        <p>The following section shows the type of work you would enjoy the most based on your responses to the 30 question career interest test.
+        </p>
+    </div>
+
+    <div class="row d-flex justify-content-between align-content-center">
+        <div class="col-sm-6  align-self-center">
+            <div id="description-accordion">
+                <accordion [closeOthers]="true">
+                    <accordion-group *ngFor="let data of careerInterestAcc;let i = index">
+                        <button class="btn btn-link btn-block justify-content-start align-items-center al d-flex w-100  shadow-none"
+                            accordion-heading type="button">
+                            <i class="fas fa-angle-double-right me-2"></i>
+                            <span> {{ data.riasecType}}</span>
+                        </button>
+                        <ul>
+                            <li *ngFor="let item of data?.description">{{item}}</li>
+
+                        </ul>
+                    </accordion-group>
+
+                </accordion>
+            </div>
+
+        </div>
+        <div class="col-sm-6 justify-content-center">
+            <div style="width: 350px; margin: auto;">
+                <canvas baseChart class="chart" [data]="radarChartData" [options]="radarChartOptions"
+                    [type]="radarChartType">
+                </canvas>
+            </div>
+            <!-- <p>These traits suggest that you have a practical and hands-on approach to problem-solving and a curious and analytical mindset. You enjoy working with tangible things and achieving concrete results, as well as delving deep into subjects and solving complex problems. These qualities indicate a strong potential for success in careers that involve physical work, practical applications of knowledge, and research.</p> -->
+        </div>
+    </div>
+</section>

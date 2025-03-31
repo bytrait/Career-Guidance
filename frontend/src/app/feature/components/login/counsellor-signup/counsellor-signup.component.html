@@ -1,0 +1,51 @@
+<div class="login-wrapper d-flex align-content-center flex-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="d-flex jusify-content-center align-content-center flex-wrap">
+                    <div class="login-content d-flex align-content-start flex-column">
+                        <div class="logo-wrapper mb-4">
+                            <img src="../../../../assets/images/bytrait_logo.png">
+                            <h1 class="mb-1 mt-4">Sign Up to get started.</h1>
+                        </div>
+                        <ng-container>
+                            <form [formGroup]="signupForm" class="login-form form-floating">
+                                <div class=" form-floating mb-3">
+                                    <input type="email" class="form-control" formControlName="name" id="floatingInputInvalid"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInputInvalid">Name</label>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="email" class="form-control" formControlName="mobile" id="floatingInputInvalid"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInputInvalid">Mobile Number</label>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="email" class="form-control" formControlName="email" id="floatingInputInvalid"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInputInvalid">Email</label>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="email" class="form-control" formControlName="registrationToken" id="floatingInputInvalid"
+                                        placeholder="name@example.com">
+                                    <label for="floatingInputInvalid">TPO Token</label>
+                                </div>
+                                <br>
+                                <div class="d-flex login-btn-wrapper justify-content-start">
+                                    <button type="button" [disabled]="!signupForm.valid" (click)="signup()" class="btn btn-primary me-4">SignUp</button>
+                                    <button type="button"   (click)="login()" class="btn btn-secondary">Login</button>
+                                </div>
+                            </form>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <app-footer></app-footer>
+</div>

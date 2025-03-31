@@ -1,0 +1,97 @@
+ 
+<section id="careerOptionsPath" class="pt-4 pb-4" *ngIf="isCareerSteps">
+    <!-- <div id="career-steps-img"></div> -->
+    <div class="career-option-header d-flex">
+        <div class="career-option-header-icon">
+            <img src="../../../../../../assets/images/careerOptionHeader.png" alt="Check" />
+        </div>
+        <div class="content">
+            <h3>Career Options</h3>
+            <p class="mb-0">Hey , {{userName}} </p>
+        </div>
+    </div>
+
+    <div class="card box-shadow mt-4" style="width: 25rem;">
+        <div class="card-header">
+            <!-- <h6 class="card-subtitle mb-2 text-muted">{{currentStep}}</h6> -->
+            <h3 class="card-title text-primary">{{currentStep}}</h3>
+        </div>
+        <div class="card-body">
+            <p class="card-text" style="font-size: 16px;">
+                " {{stepsList['firstCareerSteps'][currentStep]}} "
+              </p>
+        </div>
+    </div> 
+ 
+
+    <ng-container>
+        <div class="firstCareerSteps">
+            <img src="../../../../../../assets/images/career-steps.png" style="    width: 100px;
+            height: 100px;
+            position: absolute;
+            right: 14rem;
+            top: -5rem;" />
+
+            <div class="box box8"   (click)="getStep('8')">
+                <div class="d-flex">
+                    <div class="box-number">8</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 8']?.substr(0, strCount)}}</p>
+            </div>
+            <div class="box box7"   (click)="getStep('7')">
+                <div class="d-flex">
+                    <div class="box-number">7</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 7']?.substr(0, strCount)}}</p>
+            </div>
+            <div class="box box6" (click)="getStep('6')">
+                <div class="d-flex">
+                    <div class="box-number">6</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 6']?.substr(0, strCount)}}</p>
+            </div>
+            <div class="box box5" (click)="getStep('5')">
+                <div class="box-number">5</div>
+                <!-- <h5>Step</h5> -->
+                <p>{{stepsList['firstCareerSteps']['Step 5']?.substr(0, strCount)}}</p>
+            </div>
+            <div class="box box4" (click)="getStep('4')">
+                <div class="d-flex">
+                    <div class="box-number">4</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 4']?.split('\n')[0]?.split(':')[0]}}</p>
+            </div>
+            <div class="box box3" (click)="getStep('3')">
+                <div class="d-flex">
+                    <div class="box-number">3</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 3']?.split('\n')[0]?.split(':')[0]}}</p>
+            </div>
+            <div class="box box2" (click)="getStep('2')">
+                <div class="d-flex">
+                    <div class="box-number">2</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 2']?.split('\n')[0]?.split(':')[0]}}</p>
+            </div>
+            <div class="box box1" (click)="getStep('1')">
+                <div class="d-flex">
+                    <div class="box-number">1</div>
+                    <!-- <h5>Step</h5> -->
+                </div>
+                <p>{{stepsList['firstCareerSteps']['Step 1']?.split('\n')[0]?.split(':')[0]}}</p>
+            </div>
+
+        </div>
+
+    </ng-container>
+
+
+
+
+</section>

@@ -1,0 +1,28 @@
+.work-stream-lists {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    .form-check-card {
+        padding: 7px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        margin: 5px;
+        background-color: #fbfbfb;
+        .form-control{
+            border: 1px solid #0d6efd;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .work-stream-lists {
+        .form-check-card {
+            width: 100%;
+        }
+    }
+    
+}
+
+
+

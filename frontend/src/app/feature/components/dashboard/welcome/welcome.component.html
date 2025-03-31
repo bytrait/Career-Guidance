@@ -1,0 +1,51 @@
+<div class="welcome-page-wrapper">
+    <div class="hero-section">
+        <h1 class="welcome-header"><span>Dear</span> <span>{{userName}}</span></h1>
+    </div>
+    <div class="card card-test" *ngIf="showEmailMessage">
+        <div class="card-body">
+            <div class="email-message">
+                <p style="font-weight: bold;">Please check you inbox to see the details on how to use ByTrait to mentor your child and link to download the free e-book.</p>
+                <p>Thank You<br>Team ByTrait</p>
+                <div style="text-align: center;">
+                    <button type="button" class="btn btn-primary" (click)="showWelcomeSection()">OK</button>
+                </div>
+            </div>            
+        </div>        
+    </div>
+    <div class="card card-test" *ngIf="showWelcome">
+        <div class="card-body">
+            <h4>Welcome to ByTrait!</h4>
+            <p>
+                We're thrilled to have you embark on a journey of self-discovery and career exploration. Our personality
+                and career interest tests are
+                designed to uncover your unique traits and passions, guiding you towards a career path that aligns with
+                who you are.
+            </p>
+            <p>
+                Through our comprehensive assessments, you'll gain insights into your personality strengths and career
+                inclinations. We'll map out
+                detailed career paths tailored to your individuality, offering the most suitable options that resonate
+                with your personality and
+                aspirations.
+            </p>
+            <p>
+                Get ready to uncover new insights, explore exciting possibilities, and pave the way towards a fulfilling
+                career that reflects the best of
+                you. Let's embark on this enlightening journey together!"
+            </p>
+            <p style="font-weight: bold;">
+                Please watch the video below before you begin
+            </p>
+            <div>
+                <iframe 
+                    src="https://player.vimeo.com/video/1017764938"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                    title="ByTrait Video"></iframe>
+            </div>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" (click)="onStartTest()">Let's Start</button>
+        </div>
+    </div>
+</div>

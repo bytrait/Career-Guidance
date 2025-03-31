@@ -1,0 +1,153 @@
+<section id="careerOptionsPath" class="pt-4 pb-4" *ngIf="title!==undefined && title!==''">
+    <div class="row">
+        <div class="col-sm-12 col-mobile-view">
+            <div class="d-flex justify-content-start align-baseline">
+                <div class="career-option-header-icon me-2">
+                    <img width="100" src="../../../../../../assets/images/careerOptionHeader.png" alt="Check" />
+                </div>
+                <div class="content">
+                    <h4>Career Options</h4>
+                    <p class="mb-0">Hey {{userName}},
+                        lets see your career path for <b>{{title}}</b>
+                        Click on the step on the road map to see the details on the left.
+                        Please wait in case it's loading the step details.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-3 col-sm-5 col-md-5 col-lg-5">
+            <div class="v-progress">
+                <ul>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 0'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep0Completed}" class="box box1"
+                            (click)="getStep('0')">
+                            <div class="d-flex box-number">
+                                <span>0</span>
+                            </div>
+                            <p *ngIf="isStep0Completed">Awareness</p>
+                            <p *ngIf="!isStep0Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 1'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep1Completed}" class="box box1"
+                            (click)="getStep('1')">
+                            <div class="d-flex box-number">
+                                <span>1</span>
+                            </div>
+                            <p *ngIf="isStep1Completed">Exploration</p>
+                            <p *ngIf="!isStep1Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 2'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep2Completed,'active':'Step 2'===currentStep}"
+                            class="box box2" (click)="getStep('2')">
+                            <div class="d-flex box-number">
+                                <span>2</span>
+                            </div>
+                            <p *ngIf="isStep2Completed">Aptitude and Ability</p>
+                            <p *ngIf="!isStep2Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 3'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep3Completed}" class="box box3"
+                            (click)="getStep('3')">
+                            <div class="d-flex box-number">
+                                <span>3</span>
+                            </div>
+                            <p *ngIf="isStep3Completed">Internship</p>
+                            <p *ngIf="!isStep3Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 4'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep4Completed}" class="box box4"
+                            (click)="getStep('4')">
+                            <div class="d-flex box-number">
+                                <span>4</span>
+                            </div>
+                            <p *ngIf="isStep4Completed">Entry Level Job</p>
+                            <p *ngIf="!isStep4Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 5'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep5Completed}" class="box box5"
+                            (click)="getStep('5')">
+                            <div class="d-flex box-number">
+                                <span>5</span>
+                            </div>
+                            <p *ngIf="isStep5Completed">Opportunities</p>
+                            <p *ngIf="!isStep5Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed" [ngClass]="{'active':'Step 6'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep6Completed}" class="box box6"
+                            (click)="getStep('6')">
+                            <div class="d-flex box-number">
+                                <span>6</span>
+                            </div>
+                            <p *ngIf="isStep6Completed">Advancement</p>
+                            <p *ngIf="!isStep6Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed  " [ngClass]="{'active':'Step 7'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep7Completed}" class="box box7"
+                            (click)="getStep('7')">
+                            <div class="d-flex box-number">
+                                <span>7</span>
+                            </div>
+                            <p *ngIf="isStep7Completed">Career Progression and Leadership</p>
+                            <p *ngIf="!isStep7Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                    <li class="v-progress-item completed   " [ngClass]="{'active':'Step 8'===currentStep}">
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div [ngClass]="{'box-step-generated': isStep8Completed}" class="box box8"
+                            (click)="getStep('8')">
+                            <div class="d-flex box-number">
+                                <span>8</span>
+                            </div>
+                            <p *ngIf="isStep8Completed">Summary</p>
+                            <p *ngIf="!isStep8Completed"><span class="spinner2 spinner-border spinner-border-sm"
+                                    role="status" aria-hidden="true"></span> Loading...</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-9 col-sm-7 col-md-7 col-lg-7">
+            <div class="d-flex justify-content-start align-baseline col-desktop-view">
+            </div>
+            <div class="card card-show-steps-details box-shadow mt-4" style="width: 30rem;">
+                <div class="card-header">
+                    <h3 class="card-title text-primary">{{currentStep}}</h3>
+                </div>
+                <div #stepDiv class="card-body">
+
+                    <p class="card-text" style="display: none;">
+                        {{stepsList['firstCareerSteps'][currentStep]?.split('\n')}}
+                    </p>
+                    <div class="card-text" style="text-align: justify;"
+                        *ngFor="let item of stepsList['firstCareerSteps'][currentStep]?.split('\n'); let i = index">
+                        <div [innerHTML]="formatDisplayText(item)"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

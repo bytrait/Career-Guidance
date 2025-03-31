@@ -1,0 +1,42 @@
+<div class="welcome-page-wrapper">
+    <div class="hero-section">
+        <h1 class="welcome-header"><span>Dear</span> <span>{{userName}}</span></h1>
+        <div class="content">
+            <h4>Let's start with the personality test. Please note a few points
+                before you start. </h4>
+        </div>
+    </div>
+    <div class="card card-test">
+        <div class="card-body">
+            <ul class="list">
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    Make sure you are relaxed without any disturbance, and free of
+                    any stress while taking this test
+                </li>
+                
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    There are 50 questions
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    You can go to previous questions if you want to change your
+                    answer
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    There is no right or wrong answer
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    Select the option that you feel you are most like
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" (click)="onStartTest()">Start <i
+                    class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

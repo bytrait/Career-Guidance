@@ -1,0 +1,33 @@
+
+::ng-deep #description-accordion{
+    .panel {
+        margin-bottom: 10px;
+    }
+    .panel .card {
+        border-radius: 15px;
+    }
+    .card-header {
+        background-color: transparent;
+        border: none;
+    }
+
+    .panel-body ul li {
+        padding: 5px 5px;
+        font-size: 1rem;
+        font-family: "Red Hat Display", sans-serif;
+        font-weight: 500;
+    }
+
+    .panel-title {
+        .btn {
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-family: "Red Hat Display", sans-serif;
+            font-weight: 700;
+            color: #353535;
+        }
+        i{
+            color: var(--primary-color);
+        }
+    }
+}

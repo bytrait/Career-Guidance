@@ -1,0 +1,26 @@
+<div class="card card-test" style="height: 65vh; overflow: auto;">
+    <div class="card-body">
+        <h4>Preferred Careers</h4>
+        <p>
+            These are the student preferred career
+        </p>
+        <div>
+            <div class="col-sm-12 col-md-6" style="border: 1px solid #dfd7d7; padding: 10px; border-radius: 10px;">
+                <select class="form-control" name="branch" (change)="updateCourse($event)" style="margin-bottom: 10px;">
+                    <option value=''>All</option>
+                    <option *ngFor="let course of courses" [value]="course">{{ course }}</option>
+                </select>
+                <ng-container *ngIf="isLoader">
+                    <div class="loader-wrapper">
+                        <div class="spinner-border" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="careerData && !isLoader">
+                    <app-career-pref-chart [careerData]="careerData"></app-career-pref-chart>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

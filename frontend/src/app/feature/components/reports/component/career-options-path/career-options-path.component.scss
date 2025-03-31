@@ -1,0 +1,169 @@
+#careerOptionsPath {
+    background-image: url('../../../../../../assets/images/career-options.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center right;
+    height: 765px;
+    position: relative;
+}
+
+#career-steps-img {
+
+    background-image: url('../../../../../../assets/images/career-steps.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.steps-group {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+
+    .step {
+
+        padding: 18px 0px;
+        align-self: flex-end;
+        position: relative;
+        // box-shadow: 1px 3px 7px 2px #c1c1c1;
+        padding: 18px 0px;
+        border: 2px solid transparent;
+        border-right-color: transparent !important;
+        border-bottom-color: transparent !important;
+        background-color: #fff;
+    }
+}
+
+
+.steps-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    height: 400px;
+    margin-top: -130px;
+}
+
+.steps-wrapper div {
+    padding: 2px;
+    // background-color: #ddd;
+    min-width: 100px;
+    position: relative;
+    margin: 0 5px;
+    color: #f1f1f1;
+    border-radius: 0px 20px;
+    text-align: center;
+    box-shadow: 1px 1px 0px 0px #fff;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    h6 {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+
+        span.number-circle {
+            background-color: #fff;
+            border-radius: 100%;
+            width: 16px;
+            height: 16px;
+            display: block;
+            text-align: center;
+            font-size: 12px;
+            margin-right: 5px;
+            line-height: 15px;
+            color: #000;
+        }
+
+    }
+
+    .small {
+        font-size: .750em;
+        font-weight: 600;
+        line-height: 13px;
+        display: inline-block;
+    }
+
+}
+
+.firstCareerSteps {
+    .box {
+        width: 165px;
+        height: auto;
+        border: 1px solid #ccc;
+        position: absolute;
+        background-color: #fff;
+        padding: 5px;
+        border-radius: 15px;
+        box-shadow: 1px 1px 1px #cccc;
+
+        p {
+            font-size: 14px;
+        }
+
+        h5 {
+            font-size: 16;
+            margin-bottom: 2px;
+        }
+
+        &.box8 {
+            right: 3rem;
+            top: -4rem;
+        }
+        &.box7 {
+            position: absolute;
+            right: 28rem;
+            top: -1rem;
+        }
+        &.box6 {
+            position: absolute;
+            right: 6rem;
+            top: 6rem;
+        }
+        &.box5 {
+            position: absolute;
+            right: 20rem;
+            top: 15rem;
+        }
+
+        &.box4 {
+            position: absolute;
+            right: 0rem;
+            top: 25rem;
+        }
+
+        &.box3 {
+            position: absolute;
+            right: 24rem;
+            top: 28rem;
+        }
+
+        &.box2 {
+            position: absolute;
+            right: 10rem;
+            top: 38rem;
+        
+        }
+        &.box1 {
+            position: absolute;
+            right: 38rem;
+            top: 40rem;
+        }
+
+        .box-number {
+            height: 25px;
+            width: 25px;
+            border-radius: 15px;
+            background-color: #3573EB;
+            text-align: center;
+            margin-right: 15px;
+            margin-bottom: 5px;
+            color: #fff;
+         
+        }
+    }
+}

@@ -1,0 +1,54 @@
+<div class="welcome-page-wrapper">
+    <div class="hero-section">
+        <h1 class="welcome-header"><span>Dear</span> <span>{{userName}}</span></h1>
+        <div class="content">
+            <h4>We will now move to the career interest test. Please note
+                these points before you start
+            </h4>
+        </div>
+    </div>
+    <div class="card card-test">
+        <div class="card-body">
+            <ul class="list">
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    There are 30 questions.
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                     There are no right or wrong answers
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    This test will help you find out what your interests are and how
+                    they relate to the world of work
+                </li>
+                <li class="list-group-item d-flex bold justify-content-start align-items-start mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    <div>
+                         Most important – as you answer the questions, try NOT to think about 
+                        <ul>
+                            <li> If you have enough education or training to do the work, or
+                            </li>
+                            <li>
+                                How much money you would make by doing the work
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                    Just think about if you would like or dislike doing the work
+                </li>
+                <li class="list-group-item d-flex justify-content-start align-items-center mb-4">
+                    <span class="badge bg-primary rounded-pill me-2">*</span>
+                     Please take your time answering the questions. You can change your answers any time.
+                </li>
+            </ul>
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" (click)="onStartTest()">Start <i
+                    class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>

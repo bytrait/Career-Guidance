@@ -1,0 +1,41 @@
+<div class="welcome-page-wrapper">
+    <div class="hero-section">
+        <h1 class="welcome-header"><span>Welcome to Career Interest Test</span></h1>
+        <div class="content">
+            Question Number : <strong>{{currentQuetionValue + 1}} / {{careerList?.length}}</strong>
+            <!-- <p> Take this <strong>( {{personalityList?.length}} )</strong> step personality test to find your true potential and right career path</p> -->
+        </div>
+    </div>
+    <div class="card card-test">
+        <div class="card-body">
+            <div class="progress mb-4">
+                <div class="progress-bar progress-bar-striped" role="progressbar" [ngStyle]="{'width':percentage+'%'}"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <form [formGroup]="careertestForm">
+                <div class="career-test">
+                    <!-- <h3  class="fw-lighter">I'm a type of person who</h3> -->
+                    <h3 class="fw-bold career-question mb-4 d-flex justify-content-start align-items-center">
+                        {{currentCarrer[0]?.question}}</h3>
+                    <p>Select below Options</p>
+                    <div class="btn-group d-flex test-options-wrapper" role="group" aria-label="Basic radio toggle button group">
+                        <ng-container *ngFor="let option of answerOptions">
+                            <input type="radio" class="btn-check" (click)="handleChange(option.value)" name="answer" [value]="option.value"
+                                id="{{option.value}}" autocomplete="off" formControlName="answer">
+                            <label class="btn btn-outline-primary" [for]="option.value">{{option.name}}</label>
+                        </ng-container>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="card-footer d-flex justify-content-end">
+            <button type="button" (click)="prev()" [disabled]="!currentQuetionValue" class="btn btn-primary me-2"><i
+                    class="fa-solid fa-arrow-left"></i> Prev </button>
+            <button *ngIf="!isTestEnd" type="button" (click)="next()" [disabled]="!careertestForm.valid"
+                class="btn btn-primary">Next <i class="fa-solid fa-arrow-right"></i></button>
+            <button *ngIf="isTestEnd" type="button" (click)="finish()" [disabled]="!careertestForm.valid" class="btn btn-primary">Finish <i
+                    class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+        </div>
+    </div>
+</div>

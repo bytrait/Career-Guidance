@@ -1,0 +1,8 @@
+@media screen and (max-width: 768px) {
+    .test-options-wrapper {
+        flex-direction: column;
+        label {
+            margin-bottom: 10px;
+        }
+    }
+}
