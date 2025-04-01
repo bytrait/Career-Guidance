@@ -20,6 +20,7 @@ yarn-debug.log*
 yarn-error.log*
 pip-log.txt
 pip-delete-this-directory.txt
+logs/
 
 # Environment files
 backend/api_server/.env
