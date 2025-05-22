@@ -41,6 +41,10 @@ Their RIASEC interest types indicate high career interests in the following type
             - %s
             - %s
 Using this information please recommend 6 aspiring, fulfilling, and emerging career options including two entrepreneurial options that suit the best for this student based on their personality traits, RIASEC career interest types and their education background. Please explain each career option in one line. There must be only six lines in response. Don't send more than 6 lines. 
+- Are highly aligned with my personality and career interests.
+- Are relevant to the selected engineering discipline.
+- Include a one-line inspiring description for each career option.
+- Avoid overlapping roles and ensure diversity in the career paths.. 
             """ % (allCareerStreams, personalityTrait1, personalityTrait2, careerInterest1, careerInterest2)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=message)],
                                  )
@@ -78,12 +82,10 @@ async def find_career_steps(data):
         client = MistralAsyncClient(api_key=mistralAPIKey)
 
         step0question = """
-        A student pursuing an %s in India would like to pursue a career as a %s. Please provide the following details in one line each for this career option 
-       - Explain the role,
-       - Alignment of the career option with their personality and career interests,
-       - Local and global job opportunities,
-       - future trends, and
-       - Aspiring career tagline.
+        I am a first-semester engineering student pursuing %s and I have selected %s as my career goal. 
+        - Can you explain what this career involves — its responsibilities, industries, required skills, and career progression? 
+        - Also, recommend beginner-friendly resources (videos, articles, or communities) to explore this field. 
+        - Suggest how I can get involved in relevant student clubs or competitions. 
                 """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step0question)], )
         careerSteps0 = chat.choices[0].message.content
@@ -91,9 +93,10 @@ async def find_career_steps(data):
         update_step(careerTitle, qualification, 'step_0', careerSteps0)
 
         step1question = """
-A student pursuing  %s in India would like to pursue a career as a %s. Provide guidance for the Exploration Phase using the following points:
-- Extracurricular Activities: Suggest activities related to interests (clubs, workshops, social events).
-- Career Research: Suggest what research should be done for the selected career option.
+        I am in my second semester student of %s and pursuing a career as a %s. Please suggest 
+        - beginner tools, software, or languages I should start learning. 
+        - Recommend small hands-on tasks or exercises, and online courses or certifications I can take to strengthen my fundamentals. 
+        - Also, guide me on building my learning portfolio
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step1question)], )
         careerSteps1 = chat.choices[0].message.content
@@ -101,13 +104,11 @@ A student pursuing  %s in India would like to pursue a career as a %s. Provide g
         update_step(careerTitle, qualification, 'step_1', careerSteps1)
 
         step2question = """
-A student pursuing %s in India would like to pursue a career as a %s. Please provide the following details for this career option 
-- General aptitude required to perform and how to work on them, 
-- Abilities required to perform and how to achieve those 
-- Additional certifications or qualifications required to perform in this role in India and abroad 
-- Any technology-related skillsets or certifications required to perform in this role.
-
-Please list courses to achieve the required aptitude and abilities and links to learn more about them. Also please create a plan per semester for 8 semesters to complete additional certifications, technology-related and other skilling courses or programmes that are outside of the curriculum. Please suggest 5 ideas for their Capstone project.
+        I am in my third semester student of %s and pursuing a career as a %s. Please suggest 
+        - How to build intermediate-level skills. 
+        - What tools, platforms, or software I should learn now
+        - Suggest 2–3 small to mid-level project ideas relevant to this field. Provide step-by-step instructions to get started with each. 
+        - Mention certifications I can pursue at this stage
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step2question)], )
         careerSteps2 = chat.choices[0].message.content
@@ -115,10 +116,9 @@ Please list courses to achieve the required aptitude and abilities and links to 
         update_step(careerTitle, qualification, 'step_2', careerSteps2)
 
         step3question = """
-A student pursuing %s in India would like to pursue a career as a %s. Provide guidance for finding an internship:
-
-- List of companies that offer internships
-- How to approach these companies for internship
+        I am in my fourth semester student of %s and pursuing a career as a %s. 
+        - Recommend hands-on experiences such as simulations, competitions, or reverse engineering projects that help apply my skills. 
+        - Also, guide me on documenting projects professionally on platforms like GitHub, Behance, or others. 
          """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step3question)], )
         careerSteps3 = chat.choices[0].message.content
@@ -126,12 +126,12 @@ A student pursuing %s in India would like to pursue a career as a %s. Provide gu
         update_step(careerTitle, qualification, 'step_3', careerSteps3)
 
         step4question = """
-A student pursuing %s in India would like to pursue a career as a %s. Provide guidance for getting the entry into the workforce using the following points:
+        I am in my fifth semester student of %s and pursuing a career as a %s. 
 
-- Entry-level job description in short and starting salary range
-- Typical selection process for an entry-level job
-- How to prepare for the selection process
-- Guidance to create a LinkedIn profile and CV
+        - Recommend advanced tools, concepts, or techniques I should learn. 
+        - Also, suggest 2–3 capstone project ideas that are aligned with this role. 
+        - Provide steps or components to build those projects. 
+        - Recommend certifications and real-world case studies to learn from.
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step4question)], )
         careerSteps4 = chat.choices[0].message.content
@@ -139,10 +139,11 @@ A student pursuing %s in India would like to pursue a career as a %s. Provide gu
         update_step(careerTitle, qualification, 'step_4', careerSteps4)
 
         step5question = """
-A student pursuing %s in India would like to pursue a career as a %s. Provide guidance for finding the entry-level opportunity using the following points:
+        I am in my sixth semester student of %s and pursuing a career as a %s. 
 
-- List of job portals and links to the open positions
-- Companies offering entry-level positions in India and Abroad and links to their websites
+        - What types of companies and job roles should I look for? 
+        - How should I present my skills and portfolio? 
+        - Suggest tips for resume creation and interview preparation. 
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step5question)], )
         careerSteps5 = chat.choices[0].message.content
@@ -150,11 +151,11 @@ A student pursuing %s in India would like to pursue a career as a %s. Provide gu
         update_step(careerTitle, qualification, 'step_5', careerSteps5)
 
         step6question = """
-A student pursuing %s in India would like to pursue a career as a %s. Provide Guidance on Career Advancement once they enter into the workforce using the following points: 
+        I am in my seventh semester student of %s and pursuing a career as a %s. 
 
-- Aim for promotions, leadership roles, or specialization. 
-- Cultivate relationships with peers and seniors in the industry. 
-- Build a professional reputation through contributions, publications, or speaking engagements.
+        - Please suggest industries, company names, and roles I should target. 
+        - Recommend 2–3 final-year project ideas that are high impact and aligned with this career. 
+        - Provide step-by-step breakdowns for each project. 
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step6question)], )
         careerSteps6 = chat.choices[0].message.content
@@ -162,10 +163,12 @@ A student pursuing %s in India would like to pursue a career as a %s. Provide Gu
         update_step(careerTitle, qualification, 'step_6', careerSteps6)
 
         step7question = """
-A student pursuing %s in India would like to pursue a career as a  %s. Provide Guidance on Career Progression and Leadership using the following points when they are in the middle level of their career:
+        I am in my eighth semester student of %s and pursuing a career as a %s. 
 
-- Seek mentorship and offer mentorship to younger professionals.
-- Advance into managerial or leadership positions, contributing to the organization's growth.
+        - Please guide me through the job search process. 
+        - Recommend tips for networking, cold emailing, and interview rounds. 
+        - Suggest a checklist to finalize my profile. 
+        - Recommend a final test or skill assessment to make sure I’m industry ready before graduation.
         """ % (qualification, careerTitle)
         chat = await client.chat(model=mistralModel, messages=[ChatMessage(role="user", content=step7question)], )
         careerSteps7 = chat.choices[0].message.content
