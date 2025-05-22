@@ -20,13 +20,13 @@
             <div class="v-progress">
                 <ul>
                     <li class="v-progress-item completed" [ngClass]="{'active':'Step 0'===currentStep}">
-                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /> </div>
+                        <div class="mappin-img"><img src="../../../../../../assets/images/mappin.png" /></div>
                         <div [ngClass]="{'box-step-generated': isStep0Completed}" class="box box1"
                             (click)="getStep('0')">
                             <div class="d-flex box-number">
-                                <span>0</span>
+                                <span>1</span>
                             </div>
-                            <p *ngIf="isStep0Completed">Awareness</p>
+                            <p *ngIf="isStep0Completed">Semester 1</p>
                             <p *ngIf="!isStep0Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -36,9 +36,9 @@
                         <div [ngClass]="{'box-step-generated': isStep1Completed}" class="box box1"
                             (click)="getStep('1')">
                             <div class="d-flex box-number">
-                                <span>1</span>
+                                <span>2</span>
                             </div>
-                            <p *ngIf="isStep1Completed">Exploration</p>
+                            <p *ngIf="isStep1Completed">Semester 2</p>
                             <p *ngIf="!isStep1Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -48,9 +48,9 @@
                         <div [ngClass]="{'box-step-generated': isStep2Completed,'active':'Step 2'===currentStep}"
                             class="box box2" (click)="getStep('2')">
                             <div class="d-flex box-number">
-                                <span>2</span>
+                                <span>3</span>
                             </div>
-                            <p *ngIf="isStep2Completed">Aptitude and Ability</p>
+                            <p *ngIf="isStep2Completed">Semester 3</p>
                             <p *ngIf="!isStep2Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -60,9 +60,9 @@
                         <div [ngClass]="{'box-step-generated': isStep3Completed}" class="box box3"
                             (click)="getStep('3')">
                             <div class="d-flex box-number">
-                                <span>3</span>
+                                <span>4</span>
                             </div>
-                            <p *ngIf="isStep3Completed">Internship</p>
+                            <p *ngIf="isStep3Completed">Semester 4</p>
                             <p *ngIf="!isStep3Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -72,9 +72,9 @@
                         <div [ngClass]="{'box-step-generated': isStep4Completed}" class="box box4"
                             (click)="getStep('4')">
                             <div class="d-flex box-number">
-                                <span>4</span>
+                                <span>5</span>
                             </div>
-                            <p *ngIf="isStep4Completed">Entry Level Job</p>
+                            <p *ngIf="isStep4Completed">Semester 5</p>
                             <p *ngIf="!isStep4Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -84,9 +84,9 @@
                         <div [ngClass]="{'box-step-generated': isStep5Completed}" class="box box5"
                             (click)="getStep('5')">
                             <div class="d-flex box-number">
-                                <span>5</span>
+                                <span>6</span>
                             </div>
-                            <p *ngIf="isStep5Completed">Opportunities</p>
+                            <p *ngIf="isStep5Completed">Semester 6</p>
                             <p *ngIf="!isStep5Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -96,9 +96,9 @@
                         <div [ngClass]="{'box-step-generated': isStep6Completed}" class="box box6"
                             (click)="getStep('6')">
                             <div class="d-flex box-number">
-                                <span>6</span>
+                                <span>7</span>
                             </div>
-                            <p *ngIf="isStep6Completed">Advancement</p>
+                            <p *ngIf="isStep6Completed">Semester 7</p>
                             <p *ngIf="!isStep6Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -108,9 +108,9 @@
                         <div [ngClass]="{'box-step-generated': isStep7Completed}" class="box box7"
                             (click)="getStep('7')">
                             <div class="d-flex box-number">
-                                <span>7</span>
+                                <span>8</span>
                             </div>
-                            <p *ngIf="isStep7Completed">Career Progression and Leadership</p>
+                            <p *ngIf="isStep7Completed">Semester 8</p>
                             <p *ngIf="!isStep7Completed"><span class="spinner2 spinner-border spinner-border-sm"
                                     role="status" aria-hidden="true"></span> Loading...</p>
                         </div>
@@ -120,7 +120,7 @@
                         <div [ngClass]="{'box-step-generated': isStep8Completed}" class="box box8"
                             (click)="getStep('8')">
                             <div class="d-flex box-number">
-                                <span>8</span>
+                                <span>9</span>
                             </div>
                             <p *ngIf="isStep8Completed">Summary</p>
                             <p *ngIf="!isStep8Completed"><span class="spinner2 spinner-border spinner-border-sm"

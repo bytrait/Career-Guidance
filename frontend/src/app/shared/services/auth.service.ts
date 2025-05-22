@@ -19,14 +19,21 @@ export class AuthService {
   isAuthenticateUser: boolean = false;
 
   login(loginDetails: I_Login): Observable<I_SignIn_Response> {
-    return this.http.post<I_SignIn_Response>(environment.apiUrl + '/api/v1/loginWithOTP', loginDetails)
+    return this.http.post<I_SignIn_Response>(
+      environment.apiUrl + '/api/v1/loginWithOTP',
+      loginDetails,
+      { withCredentials: true }  // 👈 REQUIRED to accept cookies from cross-origin backend
+    );
   }
 
   logout() {
-    sessionStorage.clear();
-    localStorage.clear();
-    this.router.navigate(['/login'])
+    this.http.post(`${environment.apiUrl}/api/v1/logout`, {}, { withCredentials: true }).subscribe(() => {
+      sessionStorage.clear();
+      localStorage.clear();
+      this.router.navigate(['/login']);
+    });
   }
+  
 
   isAuthenticated(): Observable<boolean> {
     const storedDataString = sessionStorage.getItem(STORAGE_NAME);

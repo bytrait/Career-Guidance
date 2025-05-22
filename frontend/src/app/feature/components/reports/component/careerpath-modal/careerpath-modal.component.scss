@@ -161,38 +161,38 @@
     }
  
     .v-progress-item.completed:nth-child(1)::before {
-        content: "0";
-    }
-
-    .v-progress-item.completed:nth-child(2)::before {
         content: "1";
     }
 
-    .v-progress-item.completed:nth-child(3)::before {
+    .v-progress-item.completed:nth-child(2)::before {
         content: "2";
     }
 
-    .v-progress-item.completed:nth-child(4)::before {
+    .v-progress-item.completed:nth-child(3)::before {
         content: "3";
     }
 
-    .v-progress-item.completed:nth-child(5)::before {
+    .v-progress-item.completed:nth-child(4)::before {
         content: "4";
     }
 
-    .v-progress-item.completed:nth-child(6)::before {
+    .v-progress-item.completed:nth-child(5)::before {
         content: "5";
     }
 
-    .v-progress-item.completed:nth-child(7)::before {
+    .v-progress-item.completed:nth-child(6)::before {
         content: "6";
     }
 
-    .v-progress-item.completed:nth-child(8)::before {
+    .v-progress-item.completed:nth-child(7)::before {
         content: "7";
     }
-    .v-progress-item.completed:nth-child(9)::before {
+
+    .v-progress-item.completed:nth-child(8)::before {
         content: "8";
+    }
+    .v-progress-item.completed:nth-child(9)::before {
+        content: "9";
     }
 
     .v-progress-item.inprogress:before {
