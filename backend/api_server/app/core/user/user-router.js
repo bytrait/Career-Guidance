@@ -67,25 +67,26 @@ async function loginUserWithOTP(request, response) {
 async function logoutUser(request, response) {
   const userId = request.query.userId;
   logger.debug.info("Before logoutUser called by userId=" + userId);
-  delete request.headers["authorization"];
-  result = {
+
+  const isDev = process.env.NODE_ENV === "dev";
+
+  // Clear cookie with exact same options as in login
+  response.clearCookie("user-details", {
+    domain: isDev ? undefined : ".bytrait.com",
+    httpOnly: false, 
+    secure: false,   
+    sameSite: "Lax", 
+    path: "/",       
+  });
+
+  logger.debug.info("After logoutUser called by userId=" + userId);
+  logger.debug.debug(`Cleared cookie for userId=${userId}`);
+
+  const result = {
     statusCode: httpStatus.OK,
     data: { success: true, message: USER_SUCCESS_MSGS.LOGOUT_SUCCESS },
   };
-  logger.debug.info("After logoutUser called by userId=" + userId);
-  logger.debug.debug(
-    "Response by logoutUser userId=" +
-      userId +
-      ", result.statusCode=" +
-      result.statusCode +
-      ", result.data=" +
-      JSON.stringify(result.data)
-  );
-  response.clearCookie("user-details", {
-    httpOnly: true,
-    secure: true,
-    sameSite: "None",
-  });
+
   response.status(result.statusCode).json(result.data);
 }
 
