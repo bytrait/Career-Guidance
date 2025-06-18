@@ -22,7 +22,7 @@ export class AuthService {
     return this.http.post<I_SignIn_Response>(
       environment.apiUrl + '/api/v1/loginWithOTP',
       loginDetails,
-      { withCredentials: true }  // 👈 REQUIRED to accept cookies from cross-origin backend
+      { withCredentials: true }
     );
   }
 

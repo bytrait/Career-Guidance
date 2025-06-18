@@ -20,8 +20,13 @@ const versionPath = "/api/v1";
 
 // setting up cors
 
+const corsOptions = {
+  origin: "http://127.0.0.1:4200", // Angular app URL
+  credentials: true,              // Allow cookies or auth headers
+};
+
 if (process.env.NODE_ENV == "dev") {
-  app.use(cors());
+  app.use(cors(corsOptions));
 }
 // settting file upload
 app.use(fileUpload());
