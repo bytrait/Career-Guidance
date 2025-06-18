@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
+const cookieParser = require("cookie-parser");
 
 const logger = require("./app/core/logger/logger");
 const errorHandler = require("./app/core/error-handler");
@@ -12,29 +13,30 @@ const careerRouter = require("./app/core/career/career-router");
 const personalityRouter = require("./app/core/personality/personality-router");
 const paymentRouter = require("./app/core/payment/payment-router");
 const authenticateM = require("./app/middlewares/authentication-middleware");
-const cookieParser = require("cookie-parser");
 
 const app = express();
 const port = process.env.PORT || 3002;
 const versionPath = "/api/v1";
+const isDev = process.env.NODE_ENV === "dev";
 
-// setting up cors
-
+// ✅ CORS setup
 const corsOptions = {
-  origin: "http://127.0.0.1:4200", // Angular app URL
-  credentials: true,              // Allow cookies or auth headers
+  origin: "http://127.0.0.1:4200", // Angular local app URL
+  credentials: true,
 };
 
-if (process.env.NODE_ENV == "dev") {
+if (isDev) {
   app.use(cors(corsOptions));
 }
-// settting file upload
+
+// ✅ File upload and cookie parsing
 app.use(fileUpload());
 app.use(cookieParser());
 
-//setup logger
+// ✅ Logging
 app.use(logger.express);
 
+// ✅ Security headers
 app.use("*", (req, res, next) => {
   res.set("X-Frame-Options", "sameorigin");
   res.set("Cache-control", "no-cache");
@@ -46,8 +48,8 @@ app.use("*", (req, res, next) => {
   next();
 });
 
-// static serving of ui
-const options = {
+// ✅ Set security headers for static assets
+const staticHeaders = {
   setHeaders: function (res, path, stat) {
     res.set("X-Frame-Options", "sameorigin");
     res.set("Cache-control", "no-cache");
@@ -59,31 +61,33 @@ const options = {
   },
 };
 
-// reading input body
+// ✅ Parse JSON body
 app.use(bodyParser.json());
 
+// ✅ Authentication middleware
 app.use(authenticateM());
 
-// add router paths
+// ✅ API routes
 app.use(versionPath, coreRouter);
 app.use(versionPath, userRouter);
 app.use(versionPath, careerRouter);
 app.use(versionPath, personalityRouter);
 app.use(versionPath, paymentRouter);
 
-// handle all errors
+// ✅ Error handling
 app.use(errorHandler);
 
-// Serve static files from the 'dist' directory
-app.use(express.static(path.join(__dirname, "dist/careerlogy_app"), options));
+// ✅ Serve frontend from original build path
+const frontendPath = path.join(__dirname, "../../frontend/dist/careerlogy_app");
 
-// Catch all other routes and return the 'index.html' file
+app.use(express.static(frontendPath, staticHeaders));
+
+// ✅ Fallback route for SPA (index.html)
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "dist/careerlogy_app/index.html"));
+  res.sendFile(path.join(frontendPath, "index.html"));
 });
 
-// start server
+// ✅ Start server
 app.listen(port, () => {
-  //console.log(`Server listening on port: ${port}`)
   logger.debug.info(`Server listening on port: ${port}`);
 });
